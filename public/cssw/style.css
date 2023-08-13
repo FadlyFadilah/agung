@@ -1,0 +1,228 @@
+body {
+    background-color: #F0F0F0;
+}
+
+.navbar {
+    background-color: #F0F0F0;
+}
+
+.navbar a {
+    color: #03213B;
+}
+
+.custom-toggler.navbar-toggler {
+    border-color: #03213B;
+}
+/* Setting the stroke to green using rgb values (0, 128, 0) */
+  
+.custom-toggler .navbar-toggler-icon {
+    background-image: url(
+    "data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(240, 157, 81, 0.8)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+
+.dropdown-menu {
+    background-color: #F0F0F0;
+}
+.form-control {
+    background-color: #03213B;
+    border-radius: 20px;
+}
+.navbar-nav .btn {
+    background-color: #03213B;
+    border-radius: 20px;
+    padding: 0 25px 0 25px;
+    margin-top: 8px;
+}
+
+.dropdown a{
+    color: #03213B;
+}
+
+.white .btn{
+    color: #03213B;
+}
+
+.dropdown-menu {
+    width: 250px;
+}
+
+.jumbotron {
+    background-size: cover;
+    height: 90vh;
+    text-align: center;
+    position: relative;
+}
+
+.container .display-6{
+    color: #03213B;
+    margin-top: 90px;
+    margin-bottom: 45px;
+    font-size: 48px;
+}
+
+.container .owl-carousel .card, .card-img-top {
+    border-radius: 20px;
+}
+
+.container .testimoni{
+    margin-top: 150px;
+}
+
+.d-flex .respon {
+    padding-right: 200px;
+}
+
+.d-flex p {
+    margin-top: 50px;
+    color: #03213B;
+}
+
+.clear {
+    height: 25px;
+    background-color: #282828;
+
+}
+
+.footer {
+    background-color: #282828;
+    height: 450px;
+}
+.footer .card {
+    background-color: #F0F0F0;
+    height: 450px;
+}
+
+.footer .container .card .d-flex {
+    margin-top: 35px;
+}
+
+.footer .container .card .d-flex img {
+    margin-right: 20px;
+    width: 64px;
+}
+
+.d-flex .a1 {
+    color: #03213B;
+    text-transform: uppercase;
+    font-size: 24px;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+.d-flex .a2 {
+    color: #03213B;
+    text-transform: uppercase;
+    font-size: 24px;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+.copy p {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+@media (max-width: 992px)  {
+    .d-flex .respon {
+        padding-right: 100px;
+    }
+
+    .d-flex .a1 {
+        color: #03213B;
+        text-transform: uppercase;
+        font-size: 24px;
+        margin-left: 50px;
+        margin-right: 50px;
+    }
+}
+
+@media (max-width: 767px)  {
+    .d-flex .respon {
+        padding-right: 50px;
+        margin-left: 15px;
+    }
+
+    .d-flex .a1 {
+        color: #03213B;
+        text-transform: uppercase;
+        font-size: 18px;
+        margin-left: 25px;
+        margin-right: 25px;
+    }
+    .d-flex .a2 {
+        color: #03213B;
+        text-transform: uppercase;
+        font-size: 18px;
+        margin-left: 25px;
+        margin-right: 25px;
+    }
+}
+
+@media (max-width: 576px) {
+    .d-flex .respon {
+        margin-right: 25px;
+    }
+    .d-flex .thumb {
+        margin-left: 50px;
+    }
+
+    .d-flex .a1 {
+        color: #03213B;
+        text-transform: uppercase;
+        font-size: 18px;
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+    .d-flex .a2 {
+        color: #03213B;
+        text-transform: uppercase;
+        font-size: 18px;
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+}
+@media (max-width: 575px) {
+    .d-flex .respon {
+        padding-right: 0;
+    }
+    .d-flex .thumb {
+        margin-left: 25px;
+    }
+
+    .d-flex .a1 {
+        color: #03213B;
+        text-transform: uppercase;
+        font-size: 18px;
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+    .d-flex .a2 {
+        color: #03213B;
+        text-transform: uppercase;
+        font-size: 18px;
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+}
+
+@media (max-width: 414px) {
+    .d-flex .icon {
+        width: 86px;
+        height: auto;
+    }
+
+    .d-flex .a1 {
+        color: #03213B;
+        text-transform: uppercase;
+        font-size: 16px;
+    }
+    .d-flex .a2 {
+        color: #03213B;
+        text-transform: uppercase;
+        font-size: 16px;
+    }
+    
+    .footer .container .card .d-flex img {
+        margin-right: 10px;
+        width: 68px;
+    }
+}
