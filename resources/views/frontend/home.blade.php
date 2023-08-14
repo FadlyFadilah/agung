@@ -19,34 +19,31 @@
                         @endif
 
                         <div class="row">
-                            <div class="col-md-6">
-                                <div class="card bg-navy">
-                                    <div class="card-header">
-                                        Pengajuan
-                                    </div>
-                                    <div class="card-body">
-                                        <div id="chart-container"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="card bg-navy">
-                                    <div class="card-header">
-                                        Pengajuan Per-Program
-                                    </div>
-                                    <div class="chart-wrapper">
-                                        <div id="bar-chart-container"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="card bg-navy">
-                                    <div class="card-header">
-                                        Pengajuan Per-Prodi
-                                    </div>
-                                    <div class="chart-wrapper">
-                                        <div id="bar-chart-containerr"></div>
-                                    </div>
+                            <div class="col-md-12">
+                                <div class="row">
+                                    @foreach ($prodis as $item)
+                                        @php
+                                            $colors = ['bg-info', 'bg-success', 'bg-warning', 'bg-danger', 'bg-indigo', 'bg-purple', 'bg-lime', 'bg-olive'];
+                                            $randomIndex = array_rand($colors);
+                                            $randomColor = $colors[$randomIndex];
+                                        @endphp
+                                        <div class="col-lg-3 col-xs-6">
+                                            <!-- small box -->
+                                            <div class="small-box {{ $randomColor }}">
+                                                <div class="inner">
+                                                    <h3>{{ $item->mahasiswas_count ?? '0' }}</h3>
+
+                                                    <p>{{ $item->nama_prodi }}</p>
+                                                </div>
+                                                <div class="icon">
+                                                    <i class="ion ion-pie-graph"></i>
+                                                </div>
+                                                <a href="{{ route('admin.home.details', $item->nama_prodi) }}"
+                                                    class="small-box-footer">More info <i
+                                                        class="fa fa-arrow-circle-right"></i></a>
+                                            </div>
+                                        </div>
+                                    @endforeach
                                 </div>
                             </div>
                         </div>
