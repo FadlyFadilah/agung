@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\RekapitulasiDataController;
+use App\Models\Prestasi;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -14,6 +15,7 @@ Auth::routes();
 Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'middleware' => ['auth']], function () {
 
     Route::get('/', 'HomeController@index')->name('home');
+    Route::post('/export/full', 'PrestasiController@export')->name('export.full');
     Route::get('/details/{nama}', 'HomeController@detail')->name('home.details');
     // Permissions
     Route::delete('permissions/destroy', 'PermissionsController@massDestroy')->name('permissions.massDestroy');

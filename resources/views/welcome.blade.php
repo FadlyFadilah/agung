@@ -55,7 +55,7 @@
     </nav>
 
     
-    <div style="background-image: url(../icon/1.png);" class="jumbotron jumbotron-fluid">
+    <div style="background-image: url(../back.jpeg);" class="jumbotron jumbotron-fluid">
     </div>
 
     <div class="container">

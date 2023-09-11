@@ -1,35 +1,45 @@
 <table>
-    <tr>
-        <th style="font-weight: bold;">Tahun Akademik : {{ $tahunn }}</th>
-    </tr>
-    <tr>
-        <th style="font-weight: bold;">Program Studi  : {{ $prodii }}</th>
-    </tr>
     <thead>
         <tr>
             <th style="font-weight: bold; text-align: center">NO</th>
             <th style="font-weight: bold; text-align: center">Nama</th>
-            <th style="font-weight: bold; text-align: center">NIM</th>
-            <th style="font-weight: bold; text-align: center">Program Studi</th>
-            <th style="font-weight: bold; text-align: center">Program MBKM yang di ikuti</th>
+            <th style="font-weight: bold; text-align: center">Nama Lomba</th>
+            <th style="font-weight: bold; text-align: center">Bidang Lomba</th>
+            <th style="font-weight: bold; text-align: center">Tanggal Pelaksanaan</th>
+            <th style="font-weight: bold; text-align: center">Tempat Pelaksanaan</th>
+            <th style="font-weight: bold; text-align: center">Prestasi Juara</th>
+            <th style="font-weight: bold; text-align: center">Tingkat</th>
         </tr>
     </thead>
     <tbody>
         @php
             $no = 1;
         @endphp
-        @foreach ($mahasiswas as $t)
-            <tr>
+        @foreach ($prestasi as $key => $prestasi)
+            <tr data-entry-id="{{ $prestasi->id }}">
                 <td>
                     {{ $no++ }}
                 </td>
-                <td>{{ $t->nama_lengkap }}</td>
-                <td>{{ $t->nim }}</td>
-                <td>{{ $t->prodi->nama_prodi }}</td>
                 <td>
-                    @foreach ($t->mahasiswaPengajuans as $pengajuan)
-                        {{ $pengajuan->program->nama_program }},
-                    @endforeach
+                    {{ $prestasi->mahasiswa->nama_lengkap ?? '' }}
+                </td>
+                <td>
+                    {{ $prestasi->nama_lomba ?? '' }}
+                </td>
+                <td>
+                    {{ App\Models\Prestasi::BIDANG_LOMBA_SELECT[$prestasi->bidang_lomba] ?? '' }}
+                </td>
+                <td>
+                    {{ $prestasi->tanggal_pelaksanaan ?? '' }}
+                </td>
+                <td>
+                    {{ $prestasi->tempat_pelaksanaan ?? '' }}
+                </td>
+                <td>
+                    {{ $prestasi->prestasi_juara ?? '' }}
+                </td>
+                <td>
+                    {{ $prestasi->tingkat ?? '' }}
                 </td>
             </tr>
         @endforeach

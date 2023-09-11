@@ -49,26 +49,10 @@
                     </tr>
                     <tr>
                         <th>
-                            {{ trans('cruds.mahasiswa.fields.tanggal_lahir') }}
-                        </th>
-                        <td>
-                            {{ $mahasiswa->tanggal_lahir }}
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>
                             {{ trans('cruds.mahasiswa.fields.prodi') }}
                         </th>
                         <td>
                             {{ $mahasiswa->prodi->nama_prodi ?? '' }}
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>
-                            {{ trans('cruds.mahasiswa.fields.periode') }}
-                        </th>
-                        <td>
-                            {{ $mahasiswa->periode->tahun_periode ?? '' }}
                         </td>
                     </tr>
                 </tbody>
@@ -82,22 +66,5 @@
     </div>
 </div>
 
-<div class="card">
-    <div class="card-header">
-        {{ trans('global.relatedData') }}
-    </div>
-    <ul class="nav nav-tabs" role="tablist" id="relationship-tabs">
-        <li class="nav-item">
-            <a class="nav-link" href="#mahasiswa_pengajuans" role="tab" data-toggle="tab">
-                {{ trans('cruds.pengajuan.title') }}
-            </a>
-        </li>
-    </ul>
-    <div class="tab-content">
-        <div class="tab-pane" role="tabpanel" id="mahasiswa_pengajuans">
-            @includeIf('admin.mahasiswas.relationships.mahasiswaPengajuans', ['pengajuans' => $mahasiswa->mahasiswaPengajuans])
-        </div>
-    </div>
-</div>
 
 @endsection

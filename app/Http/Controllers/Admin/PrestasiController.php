@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Exports\TiExport;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\Traits\MediaUploadingTrait;
 use App\Http\Requests\MassDestroyPrestasiRequest;
@@ -11,6 +12,7 @@ use App\Models\Mahasiswa;
 use App\Models\Prestasi;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Gate;
+use Maatwebsite\Excel\Facades\Excel;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;
 use Symfony\Component\HttpFoundation\Response;
 
@@ -25,6 +27,11 @@ class PrestasiController extends Controller
         $prestasis = Prestasi::with(['mahasiswa', 'media'])->get();
 
         return view('admin.prestasis.index', compact('prestasis'));
+    }
+
+    public function export(Request $request)
+    {
+        return Excel::download(new TiExport(), 'Laporan Prestasi' . '.xlsx');
     }
 
     public function create()

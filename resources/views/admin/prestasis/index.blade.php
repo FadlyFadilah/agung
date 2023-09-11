@@ -1,14 +1,22 @@
 @extends('layouts.admin')
 @section('content')
-    @can('prestasi_create')
-        <div style="margin-bottom: 10px;" class="row">
-            <div class="col-lg-12">
+    <div style="margin-bottom: 10px;" class="row">
+        @can('prestasi_create')
+            <div class="col-lg-6">
                 <a class="btn btn-success" href="{{ route('admin.prestasis.create') }}">
                     {{ trans('global.add') }} {{ trans('cruds.prestasi.title_singular') }}
                 </a>
             </div>
+        @endcan
+        <div class="col-lg-6">
+            <form action="{{ route('admin.export.full') }}" method="post" required>
+                @csrf
+                <div class="modal-footer justify-content-between">
+                    <button type="submit" class="btn btn-primary">Download Exel</button>
+                </div>
+            </form>
         </div>
-    @endcan
+    </div>
     <div class="card">
         <div class="card-header">
             {{ trans('cruds.prestasi.title_singular') }} {{ trans('global.list') }}
